@@ -1,0 +1,20 @@
+version: '1.0'
+services:
+    colab-local:
+        build: .
+        image: colab-local
+        ports:
+            - 8888:8888
+        ipc: host
+        ulimits:
+          memlock: -1
+          stack: 67108864
+        # volumes:
+        #     - ./log:/workspace/project/log
+        #     - ./outputs:/workspace/project/outputs
+        command: jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                    - capabilities: [gpu]
