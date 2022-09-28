@@ -15,7 +15,8 @@
 # limitations under the License.
 
 #FROM nvcr.io/nvidia/pytorch:22.08-py3
-FROM nvcr.io/nvidia/pytorch:22.05-py3
+#FROM nvcr.io/nvidia/pytorch:22.05-py3
+FROM nvcr.io/nvidia/pytorch:22.07-py3
 
 # Container configuration
 EXPOSE 8888

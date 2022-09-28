@@ -12,7 +12,7 @@ services:
         # volumes:
         #     - ./log:/workspace/project/log
         #     - ./outputs:/workspace/project/outputs
-        command: jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0
+        command: jupyter notebook --NotebookApp.disable_check_xsrf=True --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0
         deploy:
             resources:
                 reservations:
